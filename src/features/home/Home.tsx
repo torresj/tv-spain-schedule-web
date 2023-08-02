@@ -1,8 +1,11 @@
 import { Container, Typography } from "@mui/material";
 import Button from "@mui/material/Button";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+  const navigate = useNavigate();
+
   return (
     <Container
       sx={{
@@ -10,11 +13,11 @@ export default function Home() {
         flexDirection: "row",
         justifyContent: "space-around",
         flexWrap: "wrap",
-        mt: 20,
+        mt: 10,
       }}
     >
       <section style={{ margin: "20px" }}>
-        <Button variant="outlined">
+        <Button variant="outlined" onClick={(event) => navigate("/movies")}>
           <Container sx={{ display: "flex", flexDirection: "column" }}>
             <img src="/movie.png" alt="movies" height={100} />
             <Typography m={1}>{"Películas"}</Typography>
