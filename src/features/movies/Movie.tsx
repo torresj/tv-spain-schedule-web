@@ -46,26 +46,42 @@ export default function Movie(props: IMovie) {
   };
 
   return (
-    <Card raised sx={{ width: 345, mt: 6 }}>
+    <Card raised sx={{ width: 270, mt: 6 }}>
+      <div
+        style={{
+          position: "absolute",
+          height: 45,
+          width: 45,
+          backgroundColor: "#1976d2",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+        }}
+      >
+        <Typography sx={{ color: "white", fontWeight: "bold" }}>
+          {movie.rate?.toFixed(1)}
+        </Typography>
+      </div>
       {movie.imageUrl && (
         <CardMedia
-          height={500}
+          height={400}
           component="img"
           alt={`${movie.name}`}
           image={`${movie.imageUrl ?? ""}`}
         />
       )}
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography variant="h6" component="div">
           {movie.name}
         </Typography>
-        <Stack direction="row" alignItems="center" mt={4}>
+        <Stack direction="row" alignItems="center" mt={1}>
           <img
             alt={`${movie.channel.name}`}
             src={`${movie.channel.logoUrl}`}
-            style={{ marginRight: 30 }}
+            style={{ marginRight: 10 }}
           />
-          <Typography gutterBottom variant="h6" component="div" sx={{ mt: 1 }}>
+          <Typography component="div">
             {new Date(movie.start).toLocaleTimeString("es", {
               hour: "2-digit",
               minute: "2-digit",
@@ -88,32 +104,6 @@ export default function Movie(props: IMovie) {
             >{`${movie.progress}%`}</Typography>
           </Box>
         </Box>
-        <Stack
-          mt={2}
-          direction="row"
-          alignItems="center"
-          justifyContent="space-evenly"
-        >
-          <Typography variant="h6" mt={2}>
-            {"Puntuación en TMDB"}
-          </Typography>
-          <Box
-            sx={{
-              height: 50,
-              width: 50,
-              backgroundColor: "#1976d2",
-              mt: 2,
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              flexDirection: "column",
-            }}
-          >
-            <Typography sx={{ color: "white", fontWeight: "bold" }}>
-              {movie.rate?.toFixed(1)}
-            </Typography>
-          </Box>
-        </Stack>
       </CardContent>
       <CardActions>
         <ExpandMore
