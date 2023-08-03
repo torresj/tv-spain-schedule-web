@@ -25,7 +25,7 @@ export default function Home() {
         </Button>
       </section>
       <section style={{ margin: "20px" }}>
-        <Button variant="outlined">
+        <Button variant="outlined" onClick={(event) => navigate("/series")}>
           <Container sx={{ display: "flex", flexDirection: "column" }}>
             <img src="/serie.png" alt="series" height={100} />
             <Typography m={1}>{"Series"}</Typography>
