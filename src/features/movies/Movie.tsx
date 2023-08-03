@@ -75,11 +75,14 @@ export default function Movie(props: IMovie) {
         <Typography variant="h6" component="div">
           {movie.name}
         </Typography>
+        <Typography variant="subtitle2" component="div">
+          {movie.classification}
+        </Typography>
         <Stack direction="row" alignItems="center" mt={1}>
           <img
             alt={`${movie.channel.name}`}
             src={`${movie.channel.logoUrl}`}
-            style={{ marginRight: 10 }}
+            style={{ marginRight: 30 }}
           />
           <Typography component="div">
             {new Date(movie.start).toLocaleTimeString("es", {
@@ -117,8 +120,21 @@ export default function Movie(props: IMovie) {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Sinopsis:</Typography>
-          <Typography paragraph>{movie.synopsis}</Typography>
+          <Typography paragraph>
+            <strong>Canal:</strong> {movie.channel.name}
+          </Typography>
+          <Typography paragraph>
+            <strong>{"Duración"}:</strong> {movie.duration}
+          </Typography>
+          <Typography paragraph textAlign={"justify"}>
+            <strong>Sinopsis:</strong> {movie.synopsis}
+          </Typography>
+          <Typography paragraph>
+            <strong>Director:</strong> {movie.director}
+          </Typography>
+          <Typography paragraph>
+            <strong>{"Intérpretes"}:</strong> {movie.interpreters}
+          </Typography>
         </CardContent>
       </Collapse>
     </Card>
