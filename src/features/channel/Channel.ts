@@ -1,4 +1,4 @@
 export default interface Channel {
-  name: String;
-  logoUrl: String;
+  name: string;
+  logoUrl: string;
 }

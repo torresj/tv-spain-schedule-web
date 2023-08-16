@@ -20,8 +20,8 @@ export default function Movies() {
         justifyContent: "space-evenly",
       }}
     >
-      {events.map((event) => (
-        <Movie movie={event} />
+      {events.map((event, index) => (
+        <Movie movie={event} key={index} />
       ))}
     </Container>
   );

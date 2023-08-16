@@ -7,13 +7,13 @@ export default interface Event {
   end: Date;
   duration: number;
   progress: number;
-  name: String;
-  synopsis?: String;
-  classification?: String;
-  director?: String;
-  interpreters?: String;
+  name: string;
+  synopsis?: string;
+  classification?: string;
+  director?: string;
+  interpreters?: string;
   rate?: number;
-  imageUrl?: String;
-  chapterName?: String;
+  imageUrl?: string;
+  chapterName?: string;
   channel: Channel;
 }
